@@ -27,4 +27,13 @@ download_url = f"https://drive.google.com/uc?id={file_id}"
 data = pd.read_csv(download_url)
 
 # Tampilkan DataFrame untuk memastikan telah dibaca dengan benar
-print(data.head())
+# data.head()
+
+# Tampilkan informasi umum tentang dataset
+# data.info()
+
+# Cek missing values
+# print(data.isnull().sum())
+
+data = data.drop(columns=["RowNumber", "CustomerId", "Surname"])
+data.head()
