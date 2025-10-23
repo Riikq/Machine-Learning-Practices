@@ -35,5 +35,16 @@ data = pd.read_csv(download_url)
 # Cek missing values
 # print(data.isnull().sum())
 
+# Hapus kolom
 data = data.drop(columns=["RowNumber", "CustomerId", "Surname"])
-data.head()
+# data.head()
+
+# Distribusi fitur numerik
+num_features = data.select_dtypes(include=[np.number])
+plt.figure(figsize=(14, 10))
+for i, column in enumerate(num_features.columns, 1):
+    plt.subplot(3, 4, i)
+    sns.histplot(data[column], bins=30, kde=True, color="blue")
+    plt.title(f"Distribusi {column}")
+plt.tight_layout()
+# plt.show
