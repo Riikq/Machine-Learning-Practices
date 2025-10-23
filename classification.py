@@ -16,3 +16,15 @@ from sklearn.metrics import (
     recall_score,
     f1_score,
 )
+
+# Gantilah ID file dengan ID dari Google Drive URL
+file_id = "19IfOP0QmCHccMu8A6B2fCUpFqZwCxuzO"
+
+# Buat URL unduhan langsung
+download_url = f"https://drive.google.com/uc?id={file_id}"
+
+# Baca file CSV dari URL
+data = pd.read_csv(download_url)
+
+# Tampilkan DataFrame untuk memastikan telah dibaca dengan benar
+print(data.head())
